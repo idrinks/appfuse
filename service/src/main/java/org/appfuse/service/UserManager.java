@@ -41,7 +41,7 @@ public interface UserManager extends GenericManager<User, Long> {
      * Finds a user by their username.
      * @param username the user's username used to login
      * @return User a populated user object
-     * @throws org.springframework.security.core.userdetails.UsernameNotFoundException
+     * @throws UsernameNotFoundException
      *         exception thrown when user not found
      */
     User getUserByUsername(String username) throws UsernameNotFoundException;

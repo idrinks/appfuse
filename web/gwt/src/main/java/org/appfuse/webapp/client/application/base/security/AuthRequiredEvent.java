@@ -31,20 +31,20 @@ public class AuthRequiredEvent extends GwtEvent<AuthRequiredEvent.Handler> {
     }
 
     @Override
-    public GwtEvent.Type<Handler> getAssociatedType() {
+    public Type<Handler> getAssociatedType() {
         return TYPE;
     }
 
     /**
-     * Register a {@link AuthRequiredEvent.Handler} on an {@link EventBus}.
+     * Register a {@link Handler} on an {@link EventBus}.
      *
      * @param eventBus
      *            the {@link EventBus}
      * @param handler
-     *            a {@link AuthRequiredEvent.Handler}
+     *            a {@link Handler}
      * @return a {@link HandlerRegistration} instance
      */
-    public static HandlerRegistration register(EventBus eventBus, AuthRequiredEvent.Handler handler) {
+    public static HandlerRegistration register(EventBus eventBus, Handler handler) {
         return eventBus.addHandler(TYPE, handler);
     }
 

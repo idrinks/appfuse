@@ -3,6 +3,7 @@
  */
 package org.appfuse.webapp.client.application;
 
+import javax.validation.ParameterNameProvider;
 import javax.validation.Validator;
 
 import org.appfuse.webapp.client.proxies.UserProxy;
@@ -20,6 +21,16 @@ import com.google.gwt.validation.client.impl.AbstractGwtValidator;
  *
  */
 public class ApplicationValidatorFactory extends AbstractGwtValidatorFactory {
+
+    @Override
+    public ParameterNameProvider getParameterNameProvider() {
+        return null;
+    }
+
+    @Override
+    public void close() {
+
+    }
 
     @GwtValidation({
             LoginView.LoginDetails.class,

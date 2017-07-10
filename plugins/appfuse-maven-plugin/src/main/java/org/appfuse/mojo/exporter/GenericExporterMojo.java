@@ -50,7 +50,7 @@ public class GenericExporterMojo extends HibernateExporterMojo {
     }
 
     /**
-     * @see org.appfuse.mojo.HibernateExporterMojo#configureExporter(org.hibernate.tool.hbm2x.Exporter)
+     * @see HibernateExporterMojo#configureExporter(Exporter)
      */
     protected Exporter configureExporter(Exporter exporter) throws MojoExecutionException {
         super.configureExporter(exporter);

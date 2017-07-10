@@ -45,8 +45,8 @@ public class LoginActivity extends AbstractBaseActivity implements LoginView.Del
     }
 
     /**
-     * @see com.google.gwt.activity.shared.Activity#start(com.google.gwt.user.client.ui.AcceptsOneWidget,
-     *      com.google.gwt.event.shared.EventBus)
+     * @see com.google.gwt.activity.shared.Activity#start(AcceptsOneWidget,
+     *      EventBus)
      */
     @Override
     public void start(final AcceptsOneWidget panel, final EventBus eventBus) {
@@ -101,7 +101,7 @@ public class LoginActivity extends AbstractBaseActivity implements LoginView.Del
         }
     }
 
-    private String createLoginPostData(final LoginView.LoginDetails login) {
+    private String createLoginPostData(final LoginDetails login) {
         return "j_username=" + URL.encodeQueryString(login.getUsername()) +
                 "&j_password=" + URL.encodeQueryString(login.getPassword()) +
                 (login.isRememberMe() ? "&_spring_security_remember_me=on" : "");

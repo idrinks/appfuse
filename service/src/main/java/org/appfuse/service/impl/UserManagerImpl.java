@@ -72,7 +72,7 @@ public class UserManagerImpl extends GenericManagerImpl<User, Long> implements U
      * passwordRecovery.vm).
      *
      * @param passwordRecoveryTemplate the Velocity template to use (relative to classpath)
-     * @see org.appfuse.service.MailEngine#sendMessage(org.springframework.mail.SimpleMailMessage, String, java.util.Map)
+     * @see MailEngine#sendMessage(SimpleMailMessage, String, Map)
      */
     public void setPasswordRecoveryTemplate(final String passwordRecoveryTemplate) {
         this.passwordRecoveryTemplate = passwordRecoveryTemplate;
@@ -83,7 +83,7 @@ public class UserManagerImpl extends GenericManagerImpl<User, Long> implements U
      * (default passwordUpdated.vm).
      *
      * @param passwordUpdatedTemplate the Velocity template to use (relative to classpath)
-     * @see org.appfuse.service.MailEngine#sendMessage(org.springframework.mail.SimpleMailMessage, String, java.util.Map)
+     * @see MailEngine#sendMessage(SimpleMailMessage, String, Map)
      */
     public void setPasswordUpdatedTemplate(final String passwordUpdatedTemplate) {
         this.passwordUpdatedTemplate = passwordUpdatedTemplate;
@@ -175,7 +175,7 @@ public class UserManagerImpl extends GenericManagerImpl<User, Long> implements U
      *
      * @param username the login name of the human
      * @return User the populated user object
-     * @throws org.springframework.security.core.userdetails.UsernameNotFoundException thrown when username not found
+     * @throws UsernameNotFoundException thrown when username not found
      */
     @Override
     public User getUserByUsername(final String username) throws UsernameNotFoundException {

@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
-import org.springframework.security.web.util.ELRequestMatcher;
-import org.springframework.security.web.util.RequestMatcher;
+import org.springframework.security.web.util.matcher.ELRequestMatcher;
+import org.springframework.security.web.util.matcher.RequestMatcher;
 
 /**
  * @author ivangsa
@@ -27,9 +27,9 @@ public class RpcAuthenticationSuccessHandler extends SavedRequestAwareAuthentica
     }
 
     /**
-     * @see org.springframework.security.web.authentication.AuthenticationSuccessHandler#onAuthenticationSuccess(javax.servlet.http.HttpServletRequest,
-     *      javax.servlet.http.HttpServletResponse,
-     *      org.springframework.security.core.Authentication)
+     * @see org.springframework.security.web.authentication.AuthenticationSuccessHandler#onAuthenticationSuccess(HttpServletRequest,
+     *      HttpServletResponse,
+     *      Authentication)
      */
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {

@@ -225,7 +225,7 @@ public class AppFuseGeneratorMojo extends HibernateExporterMojo {
     }
 
     /**
-     * @see org.appfuse.mojo.HibernateExporterMojo#configureExporter(org.hibernate.tool.hbm2x.Exporter)
+     * @see HibernateExporterMojo#configureExporter(Exporter)
      */
     protected Exporter configureExporter(Exporter exp) throws MojoExecutionException {
         // Read in AppFuseExporter#configureExporter to decide if a class should be generated or not

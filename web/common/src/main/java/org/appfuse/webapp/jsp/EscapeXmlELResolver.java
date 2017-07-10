@@ -31,7 +31,7 @@ import java.beans.FeatureDescriptor;
 import java.util.Iterator;
 
 /**
- * {@link javax.el.ELResolver} which escapes XML in String values.
+ * {@link ELResolver} which escapes XML in String values.
  */
 public class EscapeXmlELResolver extends ELResolver {
 

@@ -22,10 +22,9 @@ import javax.persistence.Transient;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
-
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
-import org.codehaus.jackson.annotate.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.search.annotations.Analyze;
@@ -204,7 +203,7 @@ public class User extends BaseObject implements Serializable, UserDetails {
 
     /**
      * @return GrantedAuthority[] an array of roles.
-     * @see org.springframework.security.core.userdetails.UserDetails#getAuthorities()
+     * @see UserDetails#getAuthorities()
      */
     @Transient
     @JsonIgnore // needed for UserApiITest in appfuse-ws archetype
@@ -230,7 +229,7 @@ public class User extends BaseObject implements Serializable, UserDetails {
     }
 
     /**
-     * @see org.springframework.security.core.userdetails.UserDetails#isAccountNonExpired()
+     * @see UserDetails#isAccountNonExpired()
      * @return true if account is still active
      */
     @Transient
@@ -244,7 +243,7 @@ public class User extends BaseObject implements Serializable, UserDetails {
     }
 
     /**
-     * @see org.springframework.security.core.userdetails.UserDetails#isAccountNonLocked()
+     * @see UserDetails#isAccountNonLocked()
      * @return false if account is locked
      */
     @Transient
@@ -258,7 +257,7 @@ public class User extends BaseObject implements Serializable, UserDetails {
     }
 
     /**
-     * @see org.springframework.security.core.userdetails.UserDetails#isCredentialsNonExpired()
+     * @see UserDetails#isCredentialsNonExpired()
      * @return true if credentials haven't expired
      */
     @Transient

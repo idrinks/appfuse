@@ -48,7 +48,7 @@ public class HibernateSearchJpaTools {
             IndexReaderAccessor readerAccessor = null;
             IndexReader reader = null;
             try {
-                FullTextEntityManager fullTextEntityManager = org.hibernate.search.jpa.Search.getFullTextEntityManager(entityManager);
+                FullTextEntityManager fullTextEntityManager = Search.getFullTextEntityManager(entityManager);
 
                 // obtain analyzer to parse the query:
                 Analyzer analyzer;

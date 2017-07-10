@@ -62,7 +62,7 @@ public class PersistentPasswordTokenManagerImpl implements PasswordTokenManager 
     }
 
     /**
-     * @see org.appfuse.service.impl.PasswordTokenManager#generateRecoveryToken(org.appfuse.model.User)
+     * @see PasswordTokenManager#generateRecoveryToken(User)
      */
     @Override
     public String generateRecoveryToken(final User user) {
@@ -73,7 +73,7 @@ public class PersistentPasswordTokenManagerImpl implements PasswordTokenManager 
     }
 
     /**
-     * @see org.appfuse.service.impl.PasswordTokenManager#isRecoveryTokenValid(org.appfuse.model.User, java.lang.String)
+     * @see PasswordTokenManager#isRecoveryTokenValid(User, String)
      */
     @Override
     public boolean isRecoveryTokenValid(final User user, final String token) {
@@ -82,7 +82,7 @@ public class PersistentPasswordTokenManagerImpl implements PasswordTokenManager 
 
     /**
      * 
-     * @see org.appfuse.service.impl.PasswordTokenManager#invalidateRecoveryToken(User, String)
+     * @see PasswordTokenManager#invalidateRecoveryToken(User, String)
      */
     @Override
     public void invalidateRecoveryToken(User user, String token) {

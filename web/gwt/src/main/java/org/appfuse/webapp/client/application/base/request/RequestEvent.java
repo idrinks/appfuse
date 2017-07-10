@@ -34,15 +34,15 @@ public class RequestEvent extends GwtEvent<RequestEvent.Handler> {
     private static final Type<Handler> TYPE = new Type<Handler>();
 
     /**
-     * Register a {@link RequestEvent.Handler} on an {@link EventBus}.
+     * Register a {@link Handler} on an {@link EventBus}.
      *
      * @param eventBus
      *            the {@link EventBus}
      * @param handler
-     *            a {@link RequestEvent.Handler}
+     *            a {@link Handler}
      * @return a {@link HandlerRegistration} instance
      */
-    public static HandlerRegistration register(EventBus eventBus, RequestEvent.Handler handler) {
+    public static HandlerRegistration register(EventBus eventBus, Handler handler) {
         return eventBus.addHandler(TYPE, handler);
     }
 
@@ -59,7 +59,7 @@ public class RequestEvent extends GwtEvent<RequestEvent.Handler> {
     }
 
     @Override
-    public GwtEvent.Type<Handler> getAssociatedType() {
+    public Type<Handler> getAssociatedType() {
         return TYPE;
     }
 

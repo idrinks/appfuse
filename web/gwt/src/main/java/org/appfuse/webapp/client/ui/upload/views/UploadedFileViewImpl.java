@@ -36,7 +36,7 @@ public class UploadedFileViewImpl extends Composite implements UploadedFileView,
 
     private Driver driver = GWT.create(Driver.class);
 
-    private UploadedFileView.Delegate delegate;
+    private Delegate delegate;
 
     @UiField
     Label name;
@@ -64,7 +64,7 @@ public class UploadedFileViewImpl extends Composite implements UploadedFileView,
     }
 
     @Override
-    public void setDelegate(UploadedFileView.Delegate delegate) {
+    public void setDelegate(Delegate delegate) {
         this.delegate = delegate;
     }
 

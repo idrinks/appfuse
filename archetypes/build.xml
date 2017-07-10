@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="archetypes" basedir=".">
 
-    <property name="version" value="3.5.1-SNAPSHOT"/>
+    <property name="version" value="3.5.2-SNAPSHOT"/>
     <property name="archetype" value="${archetype}"/>
+    <property name="skipTests" value="false"/>
     <property name="test.dir" value="${basedir}/target"/>
     <property name="dbunit.sample-data.xml"
     	value="${basedir}/../../data/common/src/test/resources/sample-data.xml" />
@@ -42,7 +43,7 @@
         <replace file="${dir}/target/generated-sources/archetype/src/main/resources/archetype-resources/pom.xml">
             <replacetoken><![CDATA[<jdbc.username>root</jdbc.username>]]></replacetoken>
             <replacevalue><![CDATA[<jdbc.username>root</jdbc.username>
-        <jdbc.password></jdbc.password>]]></replacevalue>
+        <jdbc.password>Krazy$36</jdbc.password>]]></replacevalue>
         </replace>
 
         <mvn command="install" dir="target/${module}-archetype/target/generated-sources/archetype"/>
@@ -62,7 +63,7 @@
             <delete dir="${test.dir}/@{archetype}"/>
             <maven dir="${test.dir}" archetype="@{archetype}" version="@{version}"/>
             <!-- verify: runs webtest and verifies result. locale=en as otherwise there are webtests that fail -->
-            <mvn dir="${test.dir}/@{archetype}" command="verify -Duser.language=en -Ddao.framework=@{dao.framework} -Pitest"/>
+            <mvn dir="${test.dir}/@{archetype}" command="verify -Duser.language=en -Ddao.framework=@{dao.framework} -Pmariadb"/>
         </sequential>
     </macrodef>
 
@@ -641,7 +642,7 @@
         <attribute name="dir"/>
 
         <sequential>
-            <exec dir="@{dir}" executable="mvn.bat" os="Windows 7" failonerror="true">
+            <exec dir="@{dir}" executable="mvn.cmd" os="Windows 10"  resolveexecutable="true" failonerror="true" searchpath="true">
                 <arg line="@{command}"/>
             </exec>
             <exec dir="@{dir}" executable="mvn" os="Mac OS X" failonerror="true">

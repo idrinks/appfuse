@@ -28,7 +28,7 @@ import com.google.web.bindery.requestfactory.shared.EntityProxy;
 public abstract class AbstractProxySearchView<P extends EntityProxy, S> extends Composite implements ProxySearchView<P, S> {
 
     public @UiField(provided = true) ApplicationResources i18n = GWT.create(ApplicationResources.class);
-    protected ProxySearchView.Delegate<P> delegate;
+    protected Delegate<P> delegate;
 
     @UiField(provided = true)
     public Integer pageSize = 25;

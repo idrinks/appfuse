@@ -51,7 +51,7 @@ public class CustomRequestFactoryServlet extends RequestFactoryServlet {
     private static class CustomExceptionHandler extends DefaultExceptionHandler {
         /**
          * 
-         * @see com.google.web.bindery.requestfactory.server.DefaultExceptionHandler#createServerFailure(java.lang.Throwable)
+         * @see DefaultExceptionHandler#createServerFailure(Throwable)
          */
         @Override
         public ServerFailure createServerFailure(Throwable throwable) {

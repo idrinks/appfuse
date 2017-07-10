@@ -60,7 +60,7 @@ public class Role extends BaseObject implements Serializable, GrantedAuthority {
 
     /**
      * @return the name property (getAuthority required by Acegi's GrantedAuthority interface)
-     * @see org.springframework.security.core.GrantedAuthority#getAuthority()
+     * @see GrantedAuthority#getAuthority()
      */
     @Transient
     public String getAuthority() {

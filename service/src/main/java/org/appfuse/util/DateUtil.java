@@ -80,7 +80,7 @@ public final class DateUtil {
      * @param strDate a string representation of a date
      * @return a converted Date object
      * @throws ParseException when String doesn't match the expected format
-     * @see java.text.SimpleDateFormat
+     * @see SimpleDateFormat
      */
     public static Date convertStringToDate(String aMask, String strDate)
             throws ParseException {
@@ -139,7 +139,7 @@ public final class DateUtil {
      * @param aMask the date pattern the string is in
      * @param aDate a date object
      * @return a formatted string representation of the date
-     * @see java.text.SimpleDateFormat
+     * @see SimpleDateFormat
      */
     public static String getDateTime(String aMask, Date aDate) {
         SimpleDateFormat df = null;

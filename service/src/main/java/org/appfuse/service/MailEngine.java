@@ -70,7 +70,7 @@ public class MailEngine {
     /**
      * Send a simple message with pre-populated values.
      * @param msg the message to send
-     * @throws org.springframework.mail.MailException when SMTP server is down
+     * @throws MailException when SMTP server is down
      */
     public void send(SimpleMailMessage msg) throws MailException {
         try {

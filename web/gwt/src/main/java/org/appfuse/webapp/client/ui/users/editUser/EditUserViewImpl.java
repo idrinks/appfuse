@@ -50,7 +50,7 @@ public class EditUserViewImpl extends Composite implements EditUserView {
     @UiField(provided = true)
     protected ApplicationResources i18n = GWT.create(ApplicationResources.class);
 
-    private EditUserView.Delegate delegate;
+    private Delegate delegate;
 
     @UiField
     protected Element subheading;

@@ -99,7 +99,7 @@ class RoleCheckboxCell implements HasCell<RoleProxy, Boolean> {
     private final CheckboxCell cell = new CheckboxCell(true, true);
     private final AbstractCell<Boolean> readonlyCell = new AbstractCell<Boolean>() {
         @Override
-        public void render(com.google.gwt.cell.client.Cell.Context context, Boolean value, SafeHtmlBuilder sb) {
+        public void render(Context context, Boolean value, SafeHtmlBuilder sb) {
             CheckBox checkBox = new CheckBox();
             checkBox.setValue(value);
             checkBox.setEnabled(false);
@@ -176,7 +176,7 @@ class RoleNameCell implements HasCell<RoleProxy, RoleProxy> {
 
     private Cell<RoleProxy> roleNameCell = new AbstractCell<RoleProxy>() {
         @Override
-        public void render(com.google.gwt.cell.client.Cell.Context context, RoleProxy value, SafeHtmlBuilder sb) {
+        public void render(Context context, RoleProxy value, SafeHtmlBuilder sb) {
             sb.append(SafeHtmlUtils.fromString(value.getName()));
         }
     };

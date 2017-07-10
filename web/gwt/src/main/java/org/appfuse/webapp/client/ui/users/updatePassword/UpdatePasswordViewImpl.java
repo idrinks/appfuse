@@ -31,7 +31,7 @@ public class UpdatePasswordViewImpl extends Composite implements UpdatePasswordV
 
     private static Binder uiBinder = GWT.create(Binder.class);
 
-    interface Driver extends SimpleBeanEditorDriver<UpdatePasswordView.UserCredentials, UpdatePasswordViewImpl> {
+    interface Driver extends SimpleBeanEditorDriver<UserCredentials, UpdatePasswordViewImpl> {
     }
 
     private final Driver driver = GWT.create(Driver.class);
@@ -104,7 +104,7 @@ public class UpdatePasswordViewImpl extends Composite implements UpdatePasswordV
     }
 
     @Override
-    public EditorDriver<UpdatePasswordView.UserCredentials> getEditorDriver() {
+    public EditorDriver<UserCredentials> getEditorDriver() {
         return driver;
     }
 

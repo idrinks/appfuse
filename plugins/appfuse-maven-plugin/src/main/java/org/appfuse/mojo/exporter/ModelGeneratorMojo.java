@@ -211,7 +211,7 @@ public class ModelGeneratorMojo extends HibernateExporterMojo {
     }
 
     /**
-     * @see HibernateExporterMojo#configureExporter(org.hibernate.tool.hbm2x.Exporter)
+     * @see HibernateExporterMojo#configureExporter(Exporter)
      */
     protected Exporter configureExporter(Exporter exp) throws MojoExecutionException {
         // add output directory to compile roots

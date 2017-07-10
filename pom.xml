@@ -7,7 +7,7 @@
     <artifactId>appfuse</artifactId>
     <packaging>pom</packaging>
     <name>AppFuse</name>
-    <version>3.5.1-SNAPSHOT</version>
+    <version>3.5.2-SNAPSHOT</version>
     <inceptionYear>2003</inceptionYear>
     <description>
         AppFuse is a full-stack framework for building web applications on the JVM.
@@ -21,7 +21,7 @@
     <parent>
         <groupId>io.spring.platform</groupId>
         <artifactId>platform-bom</artifactId>
-        <version>1.1.2.RELEASE</version>
+        <version>Athens-SR5</version>
     </parent>
 
     <prerequisites>
@@ -89,6 +89,13 @@
     </mailingLists>
 
     <developers>
+        <developer>
+            <id>idrinks</id>
+            <name>Ivan Drinks Jr</name>
+            <email>ivan.jr@reality-technology.com</email>
+            <organization>Reality Technology Inc.</organization>
+            <timezone>-7</timezone>
+        </developer>
         <developer>
             <id>bendg25</id>
             <name>Ben Gill</name>
@@ -518,12 +525,12 @@
         <repository>
             <id>appfuse-releases</id>
             <name>AppFuse Release Repository</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <url>http://10.10.0.49:8081/repository/maven-releases</url>
         </repository>
         <snapshotRepository>
             <id>appfuse-snapshots</id>
             <name>AppFuse Snapshot Repository</name>
-            <url>https://oss.sonatype.org/content/repositories/appfuse-snapshots</url>
+            <url>http://10.10.0.49:8081/repository/maven-snapshots</url>
         </snapshotRepository>
         <site>
             <id>appfuse-site</id>
@@ -542,8 +549,8 @@
 
     <repositories>
         <repository>
-            <id>appfuse-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/appfuse-snapshots</url>
+            <id>nexus</id>
+            <url>http://10.10.0.49:8081/repository/maven-snapshots</url>
             <releases>
                 <enabled>false</enabled>
             </releases>
@@ -555,8 +562,8 @@
 
     <pluginRepositories>
         <pluginRepository>
-            <id>appfuse-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/appfuse-snapshots</url>
+            <id>nexus</id>
+            <url>http://10.10.0.49:8081/repository/maven-snapshots</url>
             <releases>
                 <enabled>false</enabled>
             </releases>
@@ -812,11 +819,13 @@
                 <artifactId>wicketstuff-annotation</artifactId>
                 <version>${wicketstuff.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>com.fasterxml.jackson.jaxrs</groupId>
                 <artifactId>jackson-jaxrs-json-provider</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.directwebremoting</groupId>
                 <artifactId>dwr</artifactId>
@@ -841,7 +850,7 @@
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-search-analyzers</artifactId>
-                <version>${hibernate-search.version}</version>
+                <version>${hibernate-analyzers-search.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.apache.solr</groupId>
@@ -1232,6 +1241,27 @@
             </properties>
         </profile>
         <profile>
+            <id>mariadb</id>
+            <properties>
+                <dbunit.dataTypeFactoryName>org.dbunit.ext.mysql.MySqlDataTypeFactory</dbunit.dataTypeFactoryName>
+                <hibernate.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</hibernate.dialect>
+                <jdbc.groupId>mysql</jdbc.groupId>
+                <jdbc.artifactId>mysql-connector-java</jdbc.artifactId>
+                <jdbc.version>5.1.27</jdbc.version>
+                <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
+               <!-- <jdbc.groupId>org.mariadb.jdbc</jdbc.groupId>
+                <jdbc.artifactId>mariadb-java-client</jdbc.artifactId>
+                <jdbc.version>2.0.3</jdbc.version>
+                <jdbc.driverClassName>org.mariadb.jdbc.Driver</jdbc.driverClassName>-->
+                <jdbc.url>
+                    <![CDATA[jdbc:mysql://10.10.0.49:3306/${db.name}?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true]]>
+                </jdbc.url>
+                <jdbc.username>root</jdbc.username>
+                <jdbc.password>Krazy$36</jdbc.password>
+                <jdbc.validationQuery><![CDATA[SELECT 1 + 1]]></jdbc.validationQuery>
+            </properties>
+        </profile>
+        <profile>
             <id>postgresql</id>
             <properties>
                 <hibernate.dialect>org.hibernate.dialect.PostgreSQLDialect</hibernate.dialect>
@@ -1351,10 +1381,10 @@
         <jdbc.version>5.1.27</jdbc.version>
         <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
         <jdbc.url>
-            <![CDATA[jdbc:mysql://localhost/${db.name}?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true]]>
+            <![CDATA[jdbc:mysql://10.10.0.49/${db.name}?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true]]>
         </jdbc.url>
         <jdbc.username>root</jdbc.username>
-        <jdbc.password/>
+        <jdbc.password>Krazy$36</jdbc.password>
         <jdbc.validationQuery><![CDATA[SELECT 1 + 1]]></jdbc.validationQuery>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <skipITs>true</skipITs>
@@ -1376,9 +1406,10 @@
         <gin.version>2.1.2</gin.version>
         <gwt.version>2.7.0</gwt.version>
         <gwt-bootstrap.version>2.2.1.0</gwt-bootstrap.version>
-        <hibernate.version>4.3.6.Final</hibernate.version>
-        <hibernate-search.version>4.5.1.Final</hibernate-search.version>
-        <hibernate-validator.version>4.2.0.Final</hibernate-validator.version>
+        <hibernate.version>5.2.6.Final</hibernate.version>
+        <hibernate-search.version>5.7.0.Final</hibernate-search.version>
+        <hibernate-analyzers-search.version>4.6.3.Final-redhat-1</hibernate-analyzers-search.version>
+        <hibernate-validator.version>5.4.1.Final</hibernate-validator.version>
         <java.version>1.7</java.version>
         <javax-mail.version>1.4.1</javax-mail.version>
         <javax-validation.version>1.0.0.GA</javax-validation.version>

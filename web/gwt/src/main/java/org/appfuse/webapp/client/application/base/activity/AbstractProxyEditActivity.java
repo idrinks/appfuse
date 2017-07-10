@@ -221,7 +221,7 @@ public abstract class AbstractProxyEditActivity<P extends EntityProxy> extends A
 
     /**
      * 
-     * @see org.appfuse.webapp.client.application.base.view.ProxyEditView.Delegate#saveClicked()
+     * @see ProxyEditView.Delegate#saveClicked()
      */
     @Override
     public void saveClicked() {
@@ -263,7 +263,7 @@ public abstract class AbstractProxyEditActivity<P extends EntityProxy> extends A
 
     /**
      * 
-     * @see org.appfuse.webapp.client.application.base.view.ProxyEditView.Delegate#deleteClicked()
+     * @see ProxyEditView.Delegate#deleteClicked()
      */
     @Override
     public void deleteClicked() {
@@ -281,7 +281,7 @@ public abstract class AbstractProxyEditActivity<P extends EntityProxy> extends A
 
     /**
      * 
-     * @see org.appfuse.webapp.client.application.base.view.ProxyEditView.Delegate#cancelClicked()
+     * @see ProxyEditView.Delegate#cancelClicked()
      */
     @Override
     public void cancelClicked() {

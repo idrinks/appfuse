@@ -59,8 +59,8 @@ public class UserRoleAuthorizationInterceptor implements Interceptor {
      * 
      * @param request current HTTP request
      * @param response current HTTP response
-     * @throws javax.servlet.ServletException if there is an internal error
-     * @throws java.io.IOException in case of an I/O error when writing the response
+     * @throws ServletException if there is an internal error
+     * @throws IOException in case of an I/O error when writing the response
      */
     protected void handleNotAuthorized(HttpServletRequest request,
                                        HttpServletResponse response)

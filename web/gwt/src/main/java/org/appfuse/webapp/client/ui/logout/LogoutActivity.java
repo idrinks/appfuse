@@ -26,8 +26,8 @@ public class LogoutActivity extends AbstractBaseActivity {
     }
 
     /**
-     * @see com.google.gwt.activity.shared.Activity#start(com.google.gwt.user.client.ui.AcceptsOneWidget,
-     *      com.google.gwt.event.shared.EventBus)
+     * @see com.google.gwt.activity.shared.Activity#start(AcceptsOneWidget,
+     *      EventBus)
      */
     @Override
     public void start(final AcceptsOneWidget panel, final EventBus eventBus) {

@@ -55,7 +55,7 @@ public class GenericDaoHibernate<T, PK extends Serializable> implements GenericD
      */
     public GenericDaoHibernate(final Class<T> persistentClass) {
         this.persistentClass = persistentClass;
-        defaultAnalyzer = new StandardAnalyzer(Version.LUCENE_36);
+        defaultAnalyzer = new StandardAnalyzer();
     }
 
     /**
@@ -67,7 +67,7 @@ public class GenericDaoHibernate<T, PK extends Serializable> implements GenericD
     public GenericDaoHibernate(final Class<T> persistentClass, SessionFactory sessionFactory) {
         this.persistentClass = persistentClass;
         this.sessionFactory = sessionFactory;
-        defaultAnalyzer = new StandardAnalyzer(Version.LUCENE_36);
+        defaultAnalyzer = new StandardAnalyzer();
     }
 
     public SessionFactory getSessionFactory() {

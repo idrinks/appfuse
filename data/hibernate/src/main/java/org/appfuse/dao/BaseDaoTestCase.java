@@ -84,7 +84,7 @@ public abstract class BaseDaoTestCase {
      * Create a HibernateTemplate from the SessionFactory and call flush() and clear() on it.
      * Designed to be used after "save" methods in tests: http://issues.appfuse.org/browse/APF-178.
      *
-     * @throws org.springframework.beans.BeansException when can't find 'sessionFactory' bean
+     * @throws BeansException when can't find 'sessionFactory' bean
      */
     protected void flush() throws BeansException {
         Session currentSession = sessionFactory.getCurrentSession();

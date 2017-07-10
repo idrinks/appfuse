@@ -41,7 +41,7 @@ public class LoginViewImpl extends Composite implements LoginView, Editor<LoginV
 
     private static Binder uiBinder = GWT.create(Binder.class);
 
-    interface Driver extends SimpleBeanEditorDriver<LoginView.LoginDetails, LoginViewImpl> {
+    interface Driver extends SimpleBeanEditorDriver<LoginDetails, LoginViewImpl> {
     }
 
     private final Driver driver = GWT.create(Driver.class);
@@ -153,7 +153,7 @@ public class LoginViewImpl extends Composite implements LoginView, Editor<LoginV
     }
 
     @Override
-    public EditorDriver<LoginView.LoginDetails> getEditorDriver() {
+    public EditorDriver<LoginDetails> getEditorDriver() {
         return driver;
     }
 

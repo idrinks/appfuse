@@ -113,7 +113,7 @@ public class UserCounterListener implements ServletContextListener, HttpSessionA
      * This method is designed to catch when user's login and record their name
      *
      * @param event the event to process
-     * @see javax.servlet.http.HttpSessionAttributeListener#attributeAdded(javax.servlet.http.HttpSessionBindingEvent)
+     * @see HttpSessionAttributeListener#attributeAdded(HttpSessionBindingEvent)
      */
     public void attributeAdded(HttpSessionBindingEvent event) {
         if (event.getName().equals(EVENT_KEY) && !isAnonymous()) {
@@ -139,7 +139,7 @@ public class UserCounterListener implements ServletContextListener, HttpSessionA
      * When user's logout, remove their name from the hashMap
      *
      * @param event the session binding event
-     * @see javax.servlet.http.HttpSessionAttributeListener#attributeRemoved(javax.servlet.http.HttpSessionBindingEvent)
+     * @see HttpSessionAttributeListener#attributeRemoved(HttpSessionBindingEvent)
      */
     public void attributeRemoved(HttpSessionBindingEvent event) {
         if (event.getName().equals(EVENT_KEY) && !isAnonymous()) {
@@ -157,7 +157,7 @@ public class UserCounterListener implements ServletContextListener, HttpSessionA
      * then replaces it after authentication. http://forum.springframework.org/showthread.php?p=63593
      *
      * @param event the session binding event
-     * @see javax.servlet.http.HttpSessionAttributeListener#attributeReplaced(javax.servlet.http.HttpSessionBindingEvent)
+     * @see HttpSessionAttributeListener#attributeReplaced(HttpSessionBindingEvent)
      */
     public void attributeReplaced(HttpSessionBindingEvent event) {
         if (event.getName().equals(EVENT_KEY) && !isAnonymous()) {
