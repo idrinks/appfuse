@@ -7,13 +7,13 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.index.FieldInfo;
+import org.apache.lucene.index.IndexOptions;
 import org.apache.lucene.index.IndexReader;
-import org.apache.lucene.queryParser.MultiFieldQueryParser;
-import org.apache.lucene.queryParser.ParseException;
+import org.apache.lucene.index.MultiFields;
+import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
+import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.search.MatchAllDocsQuery;
 import org.apache.lucene.search.Query;
-import org.apache.lucene.util.ReaderUtil;
-import org.apache.lucene.util.Version;
 import org.hibernate.search.MassIndexer;
 import org.hibernate.search.SearchFactory;
 import org.hibernate.search.indexes.IndexReaderAccessor;
@@ -64,8 +64,8 @@ public class HibernateSearchJpaTools {
                 readerAccessor = searchFactory.getIndexReaderAccessor();
                 reader = readerAccessor.open(searchedEntity);
                 Collection<String> fieldNames = new HashSet<>();
-                for (FieldInfo fieldInfo : ReaderUtil.getMergedFieldInfos(reader)) {
-                    if (fieldInfo.isIndexed) {
+                for (FieldInfo fieldInfo : MultiFields.getMergedFieldInfos(reader)) {
+                    if (fieldInfo.getIndexOptions() != IndexOptions.NONE) {
                         fieldNames.add(fieldInfo.name);
                     }
                 }
@@ -79,7 +79,7 @@ public class HibernateSearchJpaTools {
                     queries[i] = searchTerm;
                 }
 
-                qry = MultiFieldQueryParser.parse(Version.LUCENE_36, queries, fnames, analyzer);
+                qry = MultiFieldQueryParser.parse(queries, fnames, analyzer);
             } finally {
                 if (readerAccessor != null && reader != null) {
                     readerAccessor.close(reader);
