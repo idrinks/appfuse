@@ -21,7 +21,7 @@
     <parent>
         <groupId>org.appfuse</groupId>
         <artifactId>appfuse-data</artifactId>
-        <version>3.5.2-SNAPSHOT</version>
+        <version>3.5.3-SNAPSHOT</version>
     </parent>
 
     <artifactId>appfuse-data-common</artifactId>
@@ -49,20 +49,22 @@
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
         </dependency>
-        <dependency>
+        <!-- <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-        </dependency>
+        </dependency> -->
         <!-- full text search -->
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-search</artifactId>
+            <artifactId>hibernate-search-orm</artifactId>
         </dependency>
         <!-- Additional Analyzers -->
+        <!-- 
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-search-analyzers</artifactId>
         </dependency>
+        -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>

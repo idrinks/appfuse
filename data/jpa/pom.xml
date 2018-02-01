@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.appfuse</groupId>
         <artifactId>appfuse-data</artifactId>
-        <version>3.5.2-SNAPSHOT</version>
+        <version>3.5.3-SNAPSHOT</version>
     </parent>
 
     <artifactId>appfuse-jpa</artifactId>
@@ -60,10 +60,10 @@
             <artifactId>hibernate-entitymanager</artifactId>
         </dependency>
         <!-- Upgrade Hibernate version -->
-        <dependency>
+        <!-- <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-        </dependency>
+        </dependency> -->
         <!-- Enable EhCache support -->
         <dependency>
             <groupId>org.hibernate</groupId>

@@ -7,7 +7,7 @@
     <artifactId>appfuse</artifactId>
     <packaging>pom</packaging>
     <name>AppFuse</name>
-    <version>3.5.2-SNAPSHOT</version>
+    <version>3.5.3-SNAPSHOT</version>
     <inceptionYear>2003</inceptionYear>
     <description>
         AppFuse is a full-stack framework for building web applications on the JVM.
@@ -629,7 +629,7 @@
                 <version>${javax-validation.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.hibernate</groupId>
+                <groupId>org.hibernate.validator</groupId>
                 <artifactId>hibernate-validator</artifactId>
                 <version>${hibernate-validator.version}</version>
             </dependency>
@@ -838,15 +838,16 @@
             </dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-search</artifactId>
+                <artifactId>hibernate-search-orm</artifactId>
                 <version>${hibernate-search.version}</version>
-                <exclusions>
+                <!-- <exclusions>
                     <exclusion>
                         <groupId>org.hibernate</groupId>
                         <artifactId>hibernate-core</artifactId>
                     </exclusion>
-                </exclusions>
+                </exclusions> -->
             </dependency>
+            <!-- 
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-search-analyzers</artifactId>
@@ -857,7 +858,8 @@
                         <artifactId>solr-core</artifactId>
                     </exclusion>
                 </exclusions>
-            </dependency>
+            </dependency> 
+            -->
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-ehcache</artifactId>
@@ -1412,10 +1414,10 @@
         <gin.version>2.1.2</gin.version>
         <gwt.version>2.7.0</gwt.version>
         <gwt-bootstrap.version>2.2.1.0</gwt-bootstrap.version>
-        <hibernate.version>5.2.6.Final</hibernate.version>
-        <hibernate-search.version>5.7.0.Final</hibernate-search.version>
+        <hibernate.version>5.2.11.Final</hibernate.version>
+        <hibernate-search.version>5.8.2.Final</hibernate-search.version>
         <hibernate-analyzers-search.version>4.6.3.Final-redhat-1</hibernate-analyzers-search.version>
-        <hibernate-validator.version>5.4.1.Final</hibernate-validator.version>
+        <hibernate-validator.version>6.0.7.Final</hibernate-validator.version>
         <java.version>1.7</java.version>
         <javax-mail.version>1.4.1</javax-mail.version>
         <javax-validation.version>1.0.0.GA</javax-validation.version>

@@ -1,0 +1,18 @@
+* 3.5.3-SNAPSHOT - 02/01/2018
+	* Removed the hibernate-search-analyzers dependency from AppFuse. This artifact has been deprecated since Hibernate 4, and it includes an extra version of
+	Lucene that causes problems with RSCMGR deployment. Updated Hibernate to use the hibernate-search-orm artifact, which is the updated package for hibernate search.
+	Removed dependencies for hibernate core, as this is now included by the hibernate-search-orm.
+	* Changed Files:
+		* data/common/pom.xml
+			* Changed the hibernate-search dependency artifact to hibernate-search-orm, the new package name in the maven repository.
+			* Removed the hibernate-search-analyzers dependency, as this is out of date and no longer in use.
+			* Removed the hibernate-core dependency. This is now included by the hibernate-search-orm dependency.
+		* data/hibernate/pom.xml
+			* Removed the hibernate-core dependency. This is now included by the hibernate-search-orm dependency.
+		* plugins/appfuse-maven-plugin.xml
+			* Changed the hibernate-search dependency artifact to hibernate-search-orm, the new package name in the maven repository.
+		* pom.xml
+			* Changed the hibernate-search dependency artifact to hibernate-search-orm, the new package name in the maven repository.
+			* Updated the hibernate versions in the pom. These can still be overridden in the top-level project pom file.
+			* Removed the hibernate-search-analyzers dependency, as this is out of date and no longer in use.
+			* Removed the hibernate-core dependency. This is now included by the hibernate-search-orm dependency.

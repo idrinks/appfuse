@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.appfuse.plugins</groupId>
         <artifactId>appfuse-plugins</artifactId>
-        <version>3.5.2-SNAPSHOT</version>
+        <version>3.5.3-SNAPSHOT</version>
     </parent>
 
     <artifactId>appfuse-maven-plugin</artifactId>
@@ -171,7 +171,7 @@
         <!-- full text search -->
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-search</artifactId>
+            <artifactId>hibernate-search-orm</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
