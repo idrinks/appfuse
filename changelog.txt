@@ -1,3 +1,8 @@
+* 3.5.3-SNAPSHOT - v1.1 - 02/01/2018
+	* Removed the hibernate search analyzer version number from the main pom. It's not utilized.
+	* Changed Files:
+		* pom.xml
+			* Removed the hibernate-analyzers-search.version from the pom, as the analyzer is no longer utilized.
 * 3.5.3-SNAPSHOT - 02/01/2018
 	* Removed the hibernate-search-analyzers dependency from AppFuse. This artifact has been deprecated since Hibernate 4, and it includes an extra version of
 	Lucene that causes problems with RSCMGR deployment. Updated Hibernate to use the hibernate-search-orm artifact, which is the updated package for hibernate search.
