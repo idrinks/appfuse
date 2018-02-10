@@ -1265,7 +1265,7 @@
                     <![CDATA[jdbc:mysql://10.10.0.49:3306/${db.name}?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true]]>
                 </jdbc.url>
                 <jdbc.username>root</jdbc.username>
-                <jdbc.password>Krazy$36</jdbc.password>
+                <jdbc.password></jdbc.password>
                 <jdbc.validationQuery><![CDATA[SELECT 1 + 1]]></jdbc.validationQuery>
             </properties>
         </profile>
