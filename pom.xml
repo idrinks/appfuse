@@ -525,12 +525,12 @@
         <repository>
             <id>appfuse-releases</id>
             <name>AppFuse Release Repository</name>
-            <url>http://10.10.0.49:8081/repository/maven-releases</url>
+            <url>http://75.151.83.170:8081/repository/maven-releases</url>
         </repository>
         <snapshotRepository>
             <id>appfuse-snapshots</id>
             <name>AppFuse Snapshot Repository</name>
-            <url>http://10.10.0.49:8081/repository/maven-snapshots</url>
+            <url>http://75.151.83.170:8081/repository/maven-snapshots</url>
         </snapshotRepository>
         <site>
             <id>appfuse-site</id>
@@ -550,7 +550,7 @@
     <repositories>
         <repository>
             <id>nexus</id>
-            <url>http://10.10.0.49:8081/repository/maven-snapshots</url>
+            <url>http://75.151.83.170:8081/repository/maven-snapshots</url>
             <releases>
                 <enabled>false</enabled>
             </releases>
@@ -563,7 +563,7 @@
     <pluginRepositories>
         <pluginRepository>
             <id>nexus</id>
-            <url>http://10.10.0.49:8081/repository/maven-snapshots</url>
+            <url>http://75.151.83.170:8081/repository/maven-snapshots</url>
             <releases>
                 <enabled>false</enabled>
             </releases>
@@ -1392,7 +1392,7 @@
             <![CDATA[jdbc:mysql://10.10.0.49/${db.name}?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true]]>
         </jdbc.url>
         <jdbc.username>root</jdbc.username>
-        <jdbc.password>Krazy$36</jdbc.password>
+        <jdbc.password></jdbc.password>
         <jdbc.validationQuery><![CDATA[SELECT 1 + 1]]></jdbc.validationQuery>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <skipITs>true</skipITs>
@@ -1416,7 +1416,6 @@
         <gwt-bootstrap.version>2.2.1.0</gwt-bootstrap.version>
         <hibernate.version>5.2.11.Final</hibernate.version>
         <hibernate-search.version>5.8.2.Final</hibernate-search.version>
-        <hibernate-analyzers-search.version>4.6.3.Final-redhat-1</hibernate-analyzers-search.version>
         <hibernate-validator.version>6.0.7.Final</hibernate-validator.version>
         <java.version>1.7</java.version>
         <javax-mail.version>1.4.1</javax-mail.version>
